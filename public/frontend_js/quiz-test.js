@@ -1397,11 +1397,18 @@ async function askQuestion(totalQuizQuestions, counter, fromBack) {
       if (val.answer) {
         $("#typeSelection .answerInner").append(`
           <div class="selectionOptions">
-            <button data-val="${val.answer}" onclick="checkAllergie()" data-id="${val.id}" class="selectionBtns selectionBtn" >${val.answer}</button>
+            <button data-val="${val.answer}" onclick="checkAllergie(${val.answer})" data-id="${val.id}" class="selectionBtns selectionBtn" >${val.answer}</button>
           </div>
         `);
       }
     });
+
+    $("#typeSelection .answerInner").append(`
+          <div class="selectionOptions">
+            <button data-val="none" onclick="handleNoneOfTheAbove()"  class="selectionBtns selectionBtn" >None of the above</button>
+          </div>
+
+    `);
 
     if (alreadyAnswered && alreadyAnswered.answer) {
       if (Array.isArray(alreadyAnswered.answer)) {
@@ -2066,8 +2073,11 @@ async function addToCart() {
   }
 }
 
-function checkAllergie() {
-  alert("You have alergies");
+function checkAllergie(answer) {
+  alert(answer);
+  // if (["Banana", "Olive", "Sunflowers"].includes(answer)) {
+  //   alert("You have alergies");
+  // }
 }
 
 function handleNoneOfTheAbove() {
