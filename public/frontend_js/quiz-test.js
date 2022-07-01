@@ -1397,7 +1397,7 @@ async function askQuestion(totalQuizQuestions, counter, fromBack) {
       if (val.answer) {
         $("#typeSelection .answerInner").append(`
           <div class="selectionOptions">
-            <button data-val="${val.answer}" data-id="${val.id}" class="selectionBtns selectionBtn" >${val.answer}</button>
+            <button data-val="${val.answer}" onclick="checkAllergie()" data-id="${val.id}" class="selectionBtns selectionBtn" >${val.answer}</button>
           </div>
         `);
       }
@@ -2064,6 +2064,10 @@ async function addToCart() {
   if (cartResponse.ok) {
     window.location.href = "/cart";
   }
+}
+
+function checkAllergie() {
+  alert("You have alergies");
 }
 
 function handleNoneOfTheAbove() {
