@@ -51,6 +51,11 @@
   .createdByDiv {
     font-size: 10px;
   }
+  /* mycode */
+  #page4 .createdByName {
+    margin-left: 130px;
+  }
+  /* mycode ends here */
   .noteRow {
     margin-bottom: 10vh;
   }
